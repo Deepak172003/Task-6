@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="Task 6.css" />
+</head>
+<body>
+  <main class="contact-container">
+    <!-- Contact Info -->
+    <section class="contact-info">
+      <h1>Get in Touch</h1>
+      <p>Have questions or want to discuss a project? Fill out the form and we’ll get back to you within 24 hours.</p>
+      <div class="info-box">
+        <h3>Email Us</h3>
+        <p><a href="mailto:deepakkumarsingh172003@gmail.com">deepakkumarsingh172003@gmail.com</a></p>
+      </div>
+      <div class="info-box">
+        <h3>Call Us</h3>
+        <p><a href="tel:+917667349546">(+91) 7667349546</a></p>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-wrapper">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" aria-required="true" required />
+            <small class="error-message" id="error-firstName"></small>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" aria-required="true" required />
+            <small class="error-message" id="error-lastName"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" aria-required="true" required />
+          <small class="error-message" id="error-email"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <div class="phone-row">
+            <select id="countryCode" aria-label="Country code">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+91" selected>🇮🇳 +91</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+            </select>
+            <input type="tel" id="phone" placeholder="Enter phone number" pattern="[0-9]{6,15}" />
+          </div>
+          <small class="error-message" id="error-phone"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" aria-required="true" required>
+            <option value="" disabled selected>Select subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Support Request</option>
+            <option value="sales">Sales Question</option>
+            <option value="feedback">Feedback</option>
+          </select>
+          <small class="error-message" id="error-subject"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="5" aria-required="true" required></textarea>
+          <small class="error-message" id="error-message"></small>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="consent" aria-required="true" required />
+          <label for="consent">I agree to the <a href="#" id="openPolicy" class="link">privacy policy</a>.</label>
+        </div>
+        <small class="error-message" id="error-consent"></small>
+
+        <button type="submit">Send Message</button>
+        <div id="successMessage" class="success-message hidden">
+          ✅ Your message has been sent successfully! We’ll get back to you soon.
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Privacy Policy Modal -->
+  <div id="policyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn" aria-label="Close">&times;</button>
+      <h2 id="policyTitle">Privacy Policy</h2>
+      <p>We value your privacy. This form collects your name, email, and message to respond to your inquiry.</p>
+      <p>Your information will never be sold or shared without your consent, unless required by law.</p>
+      <p>You can request deletion of your data anytime by contacting us.</p>
+    </div>
+  </div>
+
+  <script src="Task 6.js"></script>
+</body>
+</html>
